@@ -7,6 +7,9 @@ from model import RNNLM
 
 
 def train(args):
+    train_dataloader = None
+    val_dataloader = None
+    
     model = RNNLM(args.vocal_size, args.embedding_dim, args.hidden_sim)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learing_rate)
